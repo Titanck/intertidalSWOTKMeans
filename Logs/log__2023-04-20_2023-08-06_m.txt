@@ -1,0 +1,26 @@
+3 granules trouvés dans l'AOI.
+3 granules with the most recent version.
+['../output/bassin_arcachon2023-04-20_2023-08-06Kmeans/SWOTFiles/SWOT_L2_HR_PIXC_001_348_075R_20230802T151816_20230802T151827_PGC0_01.nc', '../output/bassin_arcachon2023-04-20_2023-08-06Kmeans/SWOTFiles/SWOT_L2_HR_PIXC_001_348_076R_20230802T151826_20230802T151837_PGC0_01.nc', '../output/bassin_arcachon2023-04-20_2023-08-06Kmeans/SWOTFiles/SWOT_L2_HR_PIXC_001_348_076L_20230802T151826_20230802T151837_PGC0_01.nc']
+Number of points to plot : 0
+Number of points to plot : 77807
+Number of points to plot : 2
+Files kept : []
+[]
+f version 1.0, `DataGranule.size` will be accessed as an attribute; e.g. use `DataCollection.size` **not** `DataCollection.size()`
+  total_size = round(sum(granule.size() for granule in granules) / 1024, 2)
+/home/maytitan/Documents/intertidalSWOT-Tan/code/src/swot_images_interface.py:75: UserWarning: The GeoDataFrame you are attempting to plot is empty. Nothing has been displayed.
+  gdf.plot(
+0it [00:00, ?it/s]0it [00:00, ?it/s]
+Traceback (most recent call last):
+  File "/home/maytitan/Documents/intertidalSWOT-Tan/code/IntertidalKMeans.py", line 86, in <module>
+    SWOTData = intertidal_topo.filtering_data(SWOTFiles, AOIWGS84)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/maytitan/Documents/intertidalSWOT-Tan/code/src/intertidal_topo.py", line 410, in filtering_data
+    final_df = pd.concat(df_list, ignore_index=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/maytitan/anaconda3/envs/earthaccessgraphique/lib/python3.12/site-packages/pandas/core/reshape/concat.py", line 407, in concat
+    objs, keys, ndims = _clean_keys_and_objs(objs, keys)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/maytitan/anaconda3/envs/earthaccessgraphique/lib/python3.12/site-packages/pandas/core/reshape/concat.py", line 808, in _clean_keys_and_objs
+    raise ValueError("No objects to concatenate")
+ValueError: No objects to concatenate

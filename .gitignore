@@ -1,0 +1,7 @@
+**/input/
+src/harbourlist.xml
+src/test_wms.xml
+.env
+tests/
+output/
+AOI/
