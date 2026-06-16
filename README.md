@@ -1,32 +1,32 @@
 # 🔍 IntertidalSWOT Tool
 
-This project allows you to generate a Digital Elevation Model (DEM) of Intertidal zone from SWOT altimetry files.<br>
-
----<br>
+Generate Digital Elevation Models (DEM) of Intertidal Zones from SWOT Altimetry Data PIXC using K-means Clustering
 
 ## 🚀 Installation
 
-To install the dependencies required by the script, please run the following command:<br>
+To install the dependencies required by the script, please run the following command:
 
-conda env create -f earthaccess.yaml<br>
-
----<br>
+conda env create -f IntertiKmeans.yaml<br>
 
 ## 🔧 User Parameters
 
 Edit the following section in the script:<br>
 
 #--------------------------------USER INPUTS-----------------------------------#<br>
-AOIName               #Name of the AOI (Area Of Interest) <br> 
-AOIType                       #AOI file type : shp/geojson/KML/GPKG/CSV <br>
-StartDate                     #SWOT Granule research Start Date 'yyy-mm-dd' format<br>
-EndDate =                      #SWOT Granule research End Date 'yyy-mm-dd' format<br>
-Reso =                                 #Final resolution of the MNT<br>
-Method =                         #Method for extract intertidal topography : Kmeans/Mean5p100<br>
-WaterTreshold =                    #Maximum threshold of the prior_water_probability parameter<br>
-DistMaxInterpo =                #Maximum search distance for points by the interpolators<br>
-OutputEPSG =                    #EPSG of output files<br>
-DataWebsite =            #Website where SWOT data are downloaded : Earthaccess/Hydroweb<br>
+### Input Parameters
+   **Parameter**       | **Type**               | **Description**                                                                                                                                                     | **Default**       | **Required** |
+ |---------------------|------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|--------------|
+ | **`FileAOI`**       | File (Shapefile, GeoJSON, KML, GPKG) | Path to the **Area of Interest (AOI)** file. Defines the geographic zone for DEM generation.                                                                     | -                 | ✅ Yes        |
+ | **`FileTypeAOI`**   | String                | Type of the AOI file. Supported formats: `shapefile`, `geojson`, `kml`, `gpkg`.                                                                                 | -                 | ✅ Yes        |
+ | **`BeginDate`**     | Date (YYYY-MM-DD)     | Start date for SWOT data selection. Data before this date will be ignored.                                                                                       | -                 | ✅ Yes        |
+ | **`EndDate`**       | Date (YYYY-MM-DD)     | End date for SWOT data selection. Data after this date will be ignored.                                                                                         | -                 | ✅ Yes        |
+ | **`Method`**        | String                | Classification method for elevation data. Options: `kmeans`, `dbscan`, `manual`.                                                                                 | `kmeans`          | ❌ No         |
+ | **`Reso`**          | Integer (meters)      | Spatial resolution of the output DEM (in meters). Lower values = higher precision but longer processing time.                                               | `10`              | ❌ No         |
+ | **`WaterThreshold`** | Float (meters)       | Elevation threshold to classify water areas. Values below this threshold are considered water.                                                               | `0.0`             | ❌ No         |
+ | **`DistMaxInterpo`** | Integer (meters)      | Maximum distance for interpolation of missing data. Values beyond this distance will not be interpolated.                                                     | `100`             | ❌ No
+ | **`DataWebsite`**   | URL or Path           | URL or local path to the **SWOT data source** (e.g., [NASA PO.DAAC](https://podaac.jpl.nasa.gov/swot), [THEIA](https://www.theia-land.fr/)).                     | -                 | ✅ Yes        |
+ | **`Interpolateur`** | String                | Interpolation method for DEM generation. Options: `idw`, `kriging`, `linear`.                                                                                   | `idw`             | ❌ No         |
+ | **`MAJ_data`**      | Boolean (`True`/`False`) | If `True`, the tool automatically updates SWOT data from `DataWebsite` before processing. If `False`, uses local data.                          | `False`           | ❌ No
 
 To authenticate with your Earthdata account at https://search.earthdata.nasa.gov/, you can create a .env file at the root of the project with your credentials, then run this command.<br>
 

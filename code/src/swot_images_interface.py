@@ -2,18 +2,16 @@ import os
 import xarray as xr
 import pandas as pd
 import tkinter as tk
-from tkinter import messagebox
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import contextily as ctx
 import geopandas as gpd
-from shapely.geometry import box
 import re
 from pathlib import Path
 import matplotlib.pyplot as plt
 from PIL import Image, ImageTk
 
 class SWOTApp:
-    MIN_POINTS = 1000  # Seuil minimal de points à l'intérieur de la bounding box
+    MIN_POINTS = 1000  
 
     def __init__(self, root, filepaths, bounding_box, icon_path=None):
         self.root = root
@@ -22,15 +20,14 @@ class SWOTApp:
         self.index = 0
         self.selected_files = []
 
-        # Configuration de l'icône de la fenêtre
         if icon_path:
             try:
                 icon_image = Image.open(icon_path)
-                icon_image = icon_image.resize((32, 32), Image.LANCZOS)  # Redimensionne si nécessaire
+                icon_image = icon_image.resize((32, 32), Image.LANCZOS)  
                 icon = ImageTk.PhotoImage(icon_image)
                 root.iconphoto(True, icon)
             except Exception as e:
-                print(f"Impossible de charger l'icône : {e}")
+                print(f"Load icon error: {e}")
 
         self.label = tk.Label(root, text="", wraplength=800, justify="left")
         self.label.pack(pady=10)
@@ -82,11 +79,6 @@ class SWOTApp:
             legend=True,
             legend_kwds={'label': "Height (m)"}
         )
-        minx, miny, maxx, maxy = self.bounding_box
-        bbox_geom = gpd.GeoDataFrame(
-            geometry=[box(minx, miny, maxx, maxy)],
-            crs="EPSG:4326"
-        ).to_crs(epsg=3857).total_bounds
         ctx.add_basemap(ax, source=ctx.providers.OpenStreetMap.Mapnik, zoom=14)
         filename = os.path.basename(filepath)
         match = re.match(r"SWOT_L2_HR_PIXC_(\d{3})_(\d{3})_(\d{3}[LR])_(\d{8})T\d+", filename)
@@ -115,11 +107,6 @@ class SWOTApp:
                     (sample['lat'] >= self.bounding_box[1]) &
                     (sample['lat'] <= self.bounding_box[3])
                 ]
-                # if len(in_bbox) < self.MIN_POINTS:
-                #     print(f"Not enough points ({len(in_bbox)}) in the bounding box pour {filepath}. Ignored.")
-                #     self.index += 1
-                #     continue
-                print(f"Number of points to plot : {len(in_bbox)}")
                 fig = self.plot_scatter(in_bbox, filepath)
                 self.canvas = FigureCanvasTkAgg(fig, master=self.root)
                 self.canvas.draw()
@@ -148,7 +135,6 @@ class SWOTApp:
 def afficher_fichiers(filepaths, bounding_box):
     root = tk.Tk()
     root.title("IntertidalSWOT")
-    icon_path = "./src/icone.png"
     icon_pathSWOT = "./src/icon_swot.jpeg"
     app = SWOTApp(root, filepaths, bounding_box, icon_pathSWOT)
     root.mainloop()
