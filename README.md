@@ -41,13 +41,13 @@ echo "APIKEY_HYDROWEB=your_APIkey" >> .env<br>
 ## 📂 Project Structure
 Put your AOI file in AOI folder. The results will be saved to the output folder. The SWOT images will be written in input folder<br>
 
-├── AOI
-│   └── YourAOI.csv/.kml/.shp/.geojson/.gpkg
-├── output
-│   └── YourAOI_BeginDate_EndDate_Method
-│       └── Parquet
-│	└── results
-│	    └── figRecap.png
+├── AOI<br>
+│   └── YourAOI.csv/.kml/.shp/.geojson/.gpkg<br>
+├── output<br>
+│   └── YourAOI_BeginDate_EndDate_Method<br>
+│       └── Parquet<br>
+│	└── results<br>
+│	    └── figRecap.png<br>
 │	    └── MethodYourAOIBeginDate_EndDate.tif
 │	└── SWOTFiles
 │	    └── list_granules_YourAOI.txt
