@@ -43,24 +43,26 @@ Put your AOI file in AOI folder. The results will be saved to the output folder.
 
 ├── AOI<br>
 │   └── YourAOI.csv/.kml/.shp/.geojson/.gpkg<br>
+│<br>
 ├── output<br>
 │   └── YourAOI_BeginDate_EndDate_Method<br>
 │       └── Parquet<br>
 │	└── results<br>
 │	    └── figRecap.png<br>
-│	    └── MethodYourAOIBeginDate_EndDate.tif
-│	└── SWOTFiles
-│	    └── list_granules_YourAOI.txt
-├── code
-│   └── src
-│       └── intertidal_topo.py
-│	└── swot_images_interface.py
-│   └──IntertidalKMeans.py
-│   └──run_intertidalKMeans.sh
-│
-├── IntertiKmeans.yml
-├── .gitignore
-└── README.md
+│	    └── MethodYourAOIBeginDate_EndDate.tif<br>
+│	└── SWOTFiles<br>
+│	    └── list_granules_YourAOI.txt<br>
+│<br>
+├── code<br>
+│   └── src<br>
+│       └── intertidal_topo.py<br>
+│	└── swot_images_interface.py<br>
+│   └──IntertidalKMeans.py<br>
+│   └──run_intertidalKMeans.sh<br>
+│<br>
+├── IntertiKmeans.yml<br>
+├── .gitignorev
+└── README.md<br>
 
 ---
 
