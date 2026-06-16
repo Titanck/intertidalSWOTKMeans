@@ -10,9 +10,9 @@ conda env create -f IntertiKmeans.yaml<br>
 
 ## 🔧 User Parameters
 
-Edit the following section in the script:<br>
+Edit the ###params.txt file in data folder 
 
-#--------------------------------USER INPUTS-----------------------------------#<br>
+
 ### Input Parameters
    **Parameter**       | **Type**               | **Description**                                                                                                                                                     | **Default**       | **Required** |
  |---------------------|------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|--------------|
