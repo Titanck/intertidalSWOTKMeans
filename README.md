@@ -10,7 +10,7 @@ conda env create -f IntertiKmeans.yaml<br>
 
 ## 🔧 User Parameters
 
-Edit the ###params.txt file in data folder 
+Edit the params.txt file in data folder 
 
 
 ### Input Parameters
@@ -24,7 +24,7 @@ Edit the ###params.txt file in data folder
  | **`Reso`**          | Integer (meters)      | Spatial resolution of the output DEM (in meters). Lower values = higher precision but longer processing time.                                               | `10`              | ❌ No         |
  | **`WaterThreshold`** | Float (meters)       | Elevation threshold to classify water areas. Values below this threshold are considered water.                                                               | `0.0`             | ❌ No         |
  | **`DistMaxInterpo`** | Integer (meters)      | Maximum distance for interpolation of missing data. Values beyond this distance will not be interpolated.                                                     | `100`             | ❌ No
- | **`DataWebsite`**   | URL or Path           | URL or local path to the **SWOT data source** (e.g., [NASA PO.DAAC](https://podaac.jpl.nasa.gov/swot), [THEIA](https://www.theia-land.fr/)).                     | -                 | ✅ Yes        |
+ | **`DataWebsite`**   | URL or Path           | URL or local path to the **SWOT data source** (e.g., [NASA PO.DAAC](https://podaac.jpl.nasa.gov/swot)).                     | -                 | ✅ Yes        |
  | **`Interpolateur`** | String                | Interpolation method for DEM generation. Options: `idw`, `kriging`, `linear`.                                                                                   | `idw`             | ❌ No         |
  | **`MAJ_data`**      | Boolean (`True`/`False`) | If `True`, the tool automatically updates SWOT data from `DataWebsite` before processing. If `False`, uses local data.                          | `False`           | ❌ No
 
@@ -40,22 +40,27 @@ echo "APIKEY_HYDROWEB=your_APIkey" >> .env<br>
 
 ## 📂 Project Structure
 Put your AOI file in AOI folder. The results will be saved to the output folder. The SWOT images will be written in input folder<br>
-\`\`\`<br>
-.<br>
-├── main.ipynb<br>
-├── AOI<br>
-│   └── your_AOI.csv/.kml/.shp/.geojson/.gpkg<br>
-├── tests<br>
-│   └── your_AOI/<br>
-│       └── input/<br>
-│	└── output/<br>
-├── src/<br>
-│   └──intertidal_topo.py<br>
-│   └──swot_images_interface.py<br>
-├── earthaccess.yml<br>
-├── .gitignore<br>
-└── README.md<br>
-\`\`\`<br>
+
+├── AOI
+│   └── YourAOI.csv/.kml/.shp/.geojson/.gpkg
+├── output
+│   └── YourAOI_BeginDate_EndDate_Method
+│       └── Parquet
+│	└── results
+│	    └── figRecap.png
+│	    └── MethodYourAOIBeginDate_EndDate.tif
+│	└── SWOTFiles
+│	    └── list_granules_YourAOI.txt
+├── code
+│   └── src
+│       └── intertidal_topo.py
+│	└── swot_images_interface.py
+│   └──IntertidalKMeans.py
+│   └──run_intertidalKMeans.sh
+│
+├── IntertiKmeans.yml
+├── .gitignore
+└── README.md
 
 ---
 
