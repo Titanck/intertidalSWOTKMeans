@@ -1,5 +1,5 @@
 # IntertidalSWOTKMeans
-IntertidalSWOTKMeans is a tool for generating Digital Elevation Models (DEM) of Intertidal Zones from SWOT Altimetry Data PIXC using K-means Clustering. This tool is based on the method described in the article <ins>Evaluating SWOT’s Interferometric Capabilities for Mapping Intertidal Topography<\ins>[¹]
+IntertidalSWOTKMeans is a tool for generating Digital Elevation Models (DEM) of Intertidal Zones from SWOT Altimetry Data PIXC using K-means Clustering. This tool is based on the method described in the article <ins>Evaluating SWOT’s Interferometric Capabilities for Mapping Intertidal Topography[¹]
 
 ---
 
@@ -88,4 +88,8 @@ Put your AOI file in AOI folder. The results will be saved to the output folder.
 SWOT data is accessed from [https://search.earthdata.nasa.gov](https://search.earthdata.nasa.gov) or [https://hydroweb.next.theia-land.fr/api](https://hydroweb.next.theia-land.fr/api).<br>
 You must have a NASA EarthData or a Hydroweb account to download data.
 
+
+## Contributors
+Tancrède MAYTIE
+Edward SALAMEH
 [¹]: https://doi.org/10.1016/j.rse.2024.114401 
