@@ -52,6 +52,8 @@ if __name__ == "__main__":
     EndDate=sys.argv[4]                      #SWOT Granule research End Date
     Reso=int(sys.argv[5])                      #Final resolution of the MNT
     Method=sys.argv[6]                        #Method for extract intertidal topography : Kmeans/Mean5p100
+    print(type(Method))
+    print(f"Method selected : {Method}")
     WaterThreshold=int(sys.argv[7])                  #Maximum threshold of the prior_water_probability parameter
     DistMaxInterpo=float(sys.argv[8])                 #Maximum search distance for points by the interpolators
     OutputEPSG=sys.argv[9]                #EPSG of output files
@@ -79,7 +81,7 @@ if __name__ == "__main__":
             SWOTFiles = intertidal_topo.download_swot_pixelcloud_from_aoi_hydroweb(BoundingBox, StartDate, EndDate, PathSWOT, ApiKeyHydroweb, AOIName)
         SWOTFiles = intertidal_topo.keep_highest_version(SWOTFiles)
         print(SWOTFiles)
-        if Method == "Kmeans": 
+        if Method == "Kmeans" or Method == None: 
             SWOTFiles = swot_images_interface.afficher_fichiers(SWOTFiles, BoundingBox)
             print(SWOTFiles)
         ListingSWOTFiles(SWOTFiles, PathSWOT)
@@ -93,7 +95,8 @@ if __name__ == "__main__":
     GridSWOT, x_binning, y_binning, Width, Height, XGrid, YGrid = intertidal_topo.grid(BoundingBox, Reso, OutputEPSG)
     if Method == 'Mean5p100':
         GridSWOT = intertidal_topo.binning(SWOTData, GridSWOT, intertidal_topo.mean_lowest_5_percent, x_binning, y_binning, "height")
-    if Method == "Kmeans":
+    if Method == "Kmeans" or Method == None:
+        print("Method Kmeans selected")
         SWOTData = intertidal_topo.Kmeans(SWOTData)
         SWOTData, IMaxSig0, IMinSig0 = intertidal_topo.association_classe_topo(SWOTData)
         SWOTData = intertidal_topo.apply_mask(SWOTData, "height", "height_mask", "Intertidal height")
@@ -101,6 +104,6 @@ if __name__ == "__main__":
     GridSWOT['Longitude'], GridSWOT['Latitude'] = intertidal_topo.LonLat2XY(GridSWOT['X'], GridSWOT['Y'], OutputEPSG, 4326)
     intertidal_topo.fig_recap(GridSWOT, SWOTData, PathOutput, Method+StartDate+"_"+EndDate+"recap.png", BoundingBox)
     intertidal_topo.height_maps_per_tile(SWOTData, BoundingBox, output_dir=PathOutput+"height_per_tile")
-    if Method == "Kmeans":
+    if Method == "Kmeans" or Method == None:
         intertidal_topo.plot_classif_swot(SWOTData, PathOutput, Method+"classif.png", BoundingBox, IMaxSig0, IMinSig0)
     intertidal_topo.export_raster(GridSWOT, XGrid, AOIName, Height, Width, PathOutput, Project, Method, OutputEPSG, Reso, StartDate, EndDate)

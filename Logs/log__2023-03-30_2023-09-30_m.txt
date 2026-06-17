@@ -1,11 +1,5 @@
-10 granules trouvés dans l'AOI.
-10 granules with the most recent version.
-['../output/bassin_arcachon2023-03-30_2023-09-30Kmeans/SWOTFiles/SWOT_L2_HR_PIXC_001_348_075R_20230802T151816_20230802T151827_PGC0_01.nc', '../output/bassin_arcachon2023-03-30_2023-09-30Kmeans/SWOTFiles/SWOT_L2_HR_PIXC_001_348_076R_20230802T151826_20230802T151837_PGC0_01.nc', '../output/bassin_arcachon2023-03-30_2023-09-30Kmeans/SWOTFiles/SWOT_L2_HR_PIXC_001_348_076L_20230802T151826_20230802T151837_PGC0_01.nc', '../output/bassin_arcachon2023-03-30_2023-09-30Kmeans/SWOTFiles/SWOT_L2_HR_PIXC_002_348_075R_20230823T120321_20230823T120332_PGC0_01.nc', '../output/bassin_arcachon2023-03-30_2023-09-30Kmeans/SWOTFiles/SWOT_L2_HR_PIXC_002_348_076R_20230823T120331_20230823T120342_PGC0_01.nc', '../output/bassin_arcachon2023-03-30_2023-09-30Kmeans/SWOTFiles/SWOT_L2_HR_PIXC_002_348_076L_20230823T120331_20230823T120342_PGC0_01.nc', '../output/bassin_arcachon2023-03-30_2023-09-30Kmeans/SWOTFiles/SWOT_L2_HR_PIXC_003_113_233L_20230904T234447_20230904T234458_PGC0_01.nc', '../output/bassin_arcachon2023-03-30_2023-09-30Kmeans/SWOTFiles/SWOT_L2_HR_PIXC_003_348_075R_20230913T084828_20230913T084839_PGC0_01.nc', '../output/bassin_arcachon2023-03-30_2023-09-30Kmeans/SWOTFiles/SWOT_L2_HR_PIXC_003_348_076R_20230913T084838_20230913T084849_PGC0_01.nc', '../output/bassin_arcachon2023-03-30_2023-09-30Kmeans/SWOTFiles/SWOT_L2_HR_PIXC_003_348_076L_20230913T084838_20230913T084849_PGC0_01.nc']
-Number of points to plot : 0
-Number of points to plot : 77902
-Number of points to plot : 1
-Number of points to plot : 0
-Number of points to plo 50%|█████     | 1/2 [00:06<00:06,  6.57s/it]100%|██████████| 2/2 [00:12<00:00,  6.14s/it]100%|██████████| 2/2 [00:12<00:00,  6.20s/it]
-bassin_arcachon2023-03-30_2023-09-30Kmeans/SWOTFiles/SWOT_L2_HR_PIXC_002_348_076R_20230823T120331_20230823T120342_PGC0_01.nc', '../output/bassin_arcachon2023-03-30_2023-09-30Kmeans/SWOTFiles/SWOT_L2_HR_PIXC_003_348_076R_20230913T084838_20230913T084849_PGC0_01.nc']
-['../output/bassin_arcachon2023-03-30_2023-09-30Kmeans/SWOTFiles/SWOT_L2_HR_PIXC_002_348_076R_20230823T120331_20230823T120342_PGC0_01.nc', '../output/bassin_arcachon2023-03-30_2023-09-30Kmeans/SWOTFiles/SWOT_L2_HR_PIXC_003_348_076R_20230913T084838_20230913T084849_PGC0_01.nc']
-Export completed : .././output/bassin_arcachon2023-03-30_2023-09-30Kmeans/results/Kmeansbassin_arcachon.tif
+Traceback (most recent call last):
+  File "/home/maytitan/Documents/intertidalSWOTKMeans/code/IntertidalKMeans.py", line 53, in <module>
+    Reso=int(sys.argv[5])                      #Final resolution of the MNT
+         ^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'None'

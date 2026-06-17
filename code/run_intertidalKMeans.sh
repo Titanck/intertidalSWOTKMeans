@@ -25,13 +25,13 @@ while IFS= read -r ligne; do
     AOIType=$(echo "$ligne" | awk '{print $2}')
     start_date=$(echo "$ligne" | awk '{print $3}')
     end_date=$(echo "$ligne" | awk '{print $4}')
-    Method=$(echo "$ligne" | awk '{print $5}')
-    Reso=$(echo "$ligne" | awk '{print $6}')
-    WaterThreshold=$(echo "$ligne" | awk '{print $7}')
-    DistMaxInterpo=$(echo "$ligne" | awk '{print $8}')
-    DataWebsite=$(echo "$ligne" | awk '{print $9}')
-    Interpolateur=$(echo "$ligne" | awk '{print $10}')
-    MAJ_data=$(echo "$ligne" | awk '{print $11}')
+    Method=$(echo "$ligne" | awk '{print $5}' | sed 's/^ *//;s/ *$//' | sed 's/^$/None/')
+    Reso=$(echo "$ligne" | awk '{print $6}' | sed 's/^ *//;s/ *$//' | sed 's/^$/None/')
+    WaterThreshold=$(echo "$ligne" | awk '{print $7}' | sed 's/^ *//;s/ *$//' | sed 's/^$/None/')
+    DistMaxInterpo=$(echo "$ligne" | awk '{print $8}' | sed 's/^ *//;s/ *$//' | sed 's/^$/None/')
+    DataWebsite=$(echo "$ligne" | awk '{print $9}' | sed 's/^ *//;s/ *$//' | sed 's/^$/None/')
+    Interpolateur=$(echo "$ligne" | awk '{print $10}' | sed 's/^ *//;s/ *$//' | sed 's/^$/None/')
+    MAJ_data=$(echo "$ligne" | awk '{print $11}' | sed 's/^ *//;s/ *$//' | sed 's/^$/None/')
     
     echo "Zone d'intérêt : ${AOIName}"
     echo "Réolution finale : ${Reso}"
