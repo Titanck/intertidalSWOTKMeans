@@ -1,5 +1,5 @@
 # IntertidalSWOTKMeans
-IntertidalSWOTKMeans was developed as part of the SWOT 4 COST project. One of the objectives of this proposal is to develop methods for generating digital elevation models (DEMs) of the intertidal topography using SWOT PIXC satellite imagery. This GitHub project is a tool for generating Digital Elevation Models (DEM) of Intertidal Zones from SWOT Altimetry Data PIXC using K-means Clustering. This tool is based on the method described in the article Evaluating SWOT’s Interferometric Capabilities for Mapping Intertidal Topography[¹]
+IntertidalSWOTKMeans was developed as part of the SWOT 4 COST project. One of the objectives of this proposal is to develop methods for generating digital elevation models (DEMs) of the intertidal topography using SWOT PIXC satellite imagery. This GitHub project is a tool for generating Digital Elevation Models (DEM) of Intertidal Zones from SWOT Altimetry Data PIXC using K-means Clustering. This tool is based on the method described in the article <ins>Evaluating SWOT’s Interferometric Capabilities for Mapping Intertidal Topography<\ins>[^1]
 
 ---
 
@@ -92,4 +92,4 @@ You must have a NASA EarthData or a Hydroweb account to download data.
 ## Contributors
 Tancrède MAYTIE
 Edward SALAMEH <br>
-[¹]: https://doi.org/10.1016/j.rse.2024.114401 
+[^1]: https://doi.org/10.1016/j.rse.2024.114401 
