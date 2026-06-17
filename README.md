@@ -1,5 +1,5 @@
 # IntertidalSWOTKMeans
-IntertidalSWOTKMeans was developed as part of the SWOT 4 COST project. One of the objectives of this proposal is to develop methods for generating digital elevation models (DEMs) of the intertidal topography using SWOT PIXC satellite imagery. This GitHub project is a tool for generating Digital Elevation Models (DEM) of Intertidal Zones from SWOT Altimetry Data PIXC using K-means Clustering. This tool is based on the method described in the article <ins>Evaluating SWOT’s Interferometric Capabilities for Mapping Intertidal Topography [¹]
+IntertidalSWOTKMeans was developed as part of the SWOT 4 COST project. One of the objectives of this proposal is to develop methods for generating digital elevation models (DEMs) of the intertidal topography using SWOT PIXC satellite imagery. This GitHub project is a tool for generating Digital Elevation Models (DEM) of Intertidal Zones from SWOT Altimetry Data PIXC using K-means Clustering. This tool is based on the method described in the article <ins>Evaluating SWOT’s Interferometric Capabilities for Mapping Intertidal Topography <\ins> [¹]
 
 ---
 
@@ -30,15 +30,15 @@ The tool's input parameters must be specified in the params.txt file located in 
 ### Input Parameters
    **Parameter**       | **Type**               | **Description**                                                                                                                                                     | **Default**       | **Required** |
  |---------------------|------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|--------------|
- | **`FileAOI`**       | File (Shapefile, GeoJSON, KML, GPKG) | Path to the **Area of Interest (AOI)** file. Defines the geographic zone for DEM generation.                                                                     | -                 | ✅ Yes        |
- | **`FileTypeAOI`**   | String                | Type of the AOI file. Supported formats: `shapefile`, `geojson`, `kml`, `gpkg`.                                                                                 | -                 | ✅ Yes        |
+ | **`FileAOI`**       | File (Shapefile, GeoJSON, KML, GPKG) | Path to the **Area of Interest (AOI)** file. Defines the geographic zone for DEM generation.                                                          | -                 | ✅ Yes       |
+ | **`FileTypeAOI`**   | String                | Type of the AOI file. Supported formats: `shapefile`, `geojson`, `kml`, `gpkg`.                                                                                      | -                 | ✅ Yes        |
  | **`BeginDate`**     | Date (YYYY-MM-DD)     | Start date for SWOT data selection. Data before this date will be ignored.                                                                                       | -                 | ✅ Yes        |
  | **`EndDate`**       | Date (YYYY-MM-DD)     | End date for SWOT data selection. Data after this date will be ignored.                                                                                         | -                 | ✅ Yes        |
  | **`Method`**        | String                | Classification method for elevation data. Options: `Kmeans`, `Mean5p100`.                                                                                 | `Kmeans`          | ❌ No         |
  | **`Reso`**          | Integer (meters)      | Spatial resolution of the output DEM (in meters). Lower values = higher precision but longer processing time.                                               | `20`              | ❌ No         |
  | **`WaterThreshold`** | Float (meters)       | Elevation threshold to classify water areas. Values below this threshold are considered water.                                                               | `1`             | ❌ No         |
  | **`DistMaxInterpo`** | Integer (meters)      | Maximum distance for interpolation of missing data. Values beyond this distance will not be interpolated.                                                     | `2e3`            | ❌ No
- | **`DataWebsite`**   | String           | Name of the website where to search for data. Supported websites: `Earthaccess` and `Hydroweb`                     | -                 | ✅ Yes        |
+ | **`DataWebsite`**   | String           | Name of the website where to search for data. Supported websites: `Earthaccess` and `Hydroweb`                                                                        | -                 | ✅ Yes        |
  | **`Interpolateur`** | String                | Interpolation method for DEM generation. Options: `IDW`, `Moyenne`.                                                                                   | `Moyenne`             | ❌ No         |
  | **`MAJ_data`**      | Boolean (`True`/`False`) | If `True`, the tool automatically updates SWOT data from `DataWebsite` before processing. If `False`, uses local data.                          | `True`           | ❌ No
 
