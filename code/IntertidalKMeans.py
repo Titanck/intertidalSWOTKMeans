@@ -3,10 +3,8 @@ from src import intertidal_topo
 import os 
 from src import swot_images_interface
 import importlib
-import xarray as xr
 import pandas as pd
 from pathlib import Path
-from itertools import chain
 import panel as pn
 import sys
 pn.extension()
@@ -46,20 +44,18 @@ def ListingSWOTFiles(SWOTFiles, PathSWOT):
     fichier.write_text("\n".join(SWOTFiles_sns_doublons_str), encoding="utf-8")
 
 if __name__ == "__main__":
-    AOIName=sys.argv[1]              #Name of the AOI (Area Of Interest)
-    AOIType=sys.argv[2]                      #AOI file type : shp/geojson/KML/GPKG/CSV
-    StartDate=sys.argv[3]                    #SWOT Granule research Start Date
-    EndDate=sys.argv[4]                      #SWOT Granule research End Date
-    Reso=int(sys.argv[5])                      #Final resolution of the MNT
-    Method=sys.argv[6]                        #Method for extract intertidal topography : Kmeans/Mean5p100
-    print(type(Method))
-    print(f"Method selected : {Method}")
-    WaterThreshold=int(sys.argv[7])                  #Maximum threshold of the prior_water_probability parameter
-    DistMaxInterpo=float(sys.argv[8])                 #Maximum search distance for points by the interpolators
-    OutputEPSG=sys.argv[9]                #EPSG of output files
-    DataWebsite=sys.argv[10]           #Website where SWOT data are downloaded : Earthaccess/Hydroweb
-    Interpolateur = sys.argv[11]                      #Interpolateur for gridding : Nearest/IDW/RBF
-    MAJ_data=sys.argv[12]                      #1 if you want to update the list of SWOT files to download, 0 otherwise  
+    AOIName=sys.argv[1]              
+    AOIType=sys.argv[2]                     
+    StartDate=sys.argv[3]                   
+    EndDate=sys.argv[4]                      
+    Reso=int(sys.argv[5])                      
+    Method=sys.argv[6]                        
+    WaterThreshold=int(sys.argv[7])                  
+    DistMaxInterpo=float(sys.argv[8])                 
+    OutputEPSG=sys.argv[9]               
+    DataWebsite=sys.argv[10]           
+    Interpolateur = sys.argv[11]                      
+    MAJ_data=sys.argv[12]                        
 
     AOIPath = f".././AOI/{AOIName}.{AOIType.lower()}"
     Project = os.path.splitext(os.path.basename(AOIPath))[0]
@@ -80,7 +76,6 @@ if __name__ == "__main__":
         if DataWebsite =='Hydroweb':
             SWOTFiles = intertidal_topo.download_swot_pixelcloud_from_aoi_hydroweb(BoundingBox, StartDate, EndDate, PathSWOT, ApiKeyHydroweb, AOIName)
         SWOTFiles = intertidal_topo.keep_highest_version(SWOTFiles)
-        print(SWOTFiles)
         if Method == "Kmeans" or Method == None: 
             SWOTFiles = swot_images_interface.afficher_fichiers(SWOTFiles, BoundingBox)
             print(SWOTFiles)
@@ -96,7 +91,6 @@ if __name__ == "__main__":
     if Method == 'Mean5p100':
         GridSWOT = intertidal_topo.binning(SWOTData, GridSWOT, intertidal_topo.mean_lowest_5_percent, x_binning, y_binning, "height")
     if Method == "Kmeans" or Method == None:
-        print("Method Kmeans selected")
         SWOTData = intertidal_topo.Kmeans(SWOTData)
         SWOTData, IMaxSig0, IMinSig0 = intertidal_topo.association_classe_topo(SWOTData)
         SWOTData = intertidal_topo.apply_mask(SWOTData, "height", "height_mask", "Intertidal height")

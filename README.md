@@ -34,13 +34,13 @@ The tool's input parameters must be specified in the params.txt file located in 
  | **`FileTypeAOI`**   | String                | Type of the AOI file. Supported formats: `shapefile`, `geojson`, `kml`, `gpkg`.                                                                                 | -                 | ✅ Yes        |
  | **`BeginDate`**     | Date (YYYY-MM-DD)     | Start date for SWOT data selection. Data before this date will be ignored.                                                                                       | -                 | ✅ Yes        |
  | **`EndDate`**       | Date (YYYY-MM-DD)     | End date for SWOT data selection. Data after this date will be ignored.                                                                                         | -                 | ✅ Yes        |
- | **`Method`**        | String                | Classification method for elevation data. Options: `Kmeans`, `Mean5p100`.                                                                                 | -          | ❌ No         |
- | **`Reso`**          | Integer (meters)      | Spatial resolution of the output DEM (in meters). Lower values = higher precision but longer processing time.                                               | -              | ❌ No         |
- | **`WaterThreshold`** | Float (meters)       | Elevation threshold to classify water areas. Values below this threshold are considered water.                                                               | -             | ❌ No         |
- | **`DistMaxInterpo`** | Integer (meters)      | Maximum distance for interpolation of missing data. Values beyond this distance will not be interpolated.                                                     | -            | ❌ No
+ | **`Method`**        | String                | Classification method for elevation data. Options: `Kmeans`, `Mean5p100`.                                                                                 | `Kmeans`          | ❌ No         |
+ | **`Reso`**          | Integer (meters)      | Spatial resolution of the output DEM (in meters). Lower values = higher precision but longer processing time.                                               | `20`              | ❌ No         |
+ | **`WaterThreshold`** | Float (meters)       | Elevation threshold to classify water areas. Values below this threshold are considered water.                                                               | `1`             | ❌ No         |
+ | **`DistMaxInterpo`** | Integer (meters)      | Maximum distance for interpolation of missing data. Values beyond this distance will not be interpolated.                                                     | `2e3`            | ❌ No
  | **`DataWebsite`**   | String           | Name of the website where to search for data. Supported websites: `Earthaccess` and `Hydroweb`                     | -                 | ✅ Yes        |
- | **`Interpolateur`** | String                | Interpolation method for DEM generation. Options: `idw`, `moyenne`, `linear`.                                                                                   | -             | ❌ No         |
- | **`MAJ_data`**      | Boolean (`True`/`False`) | If `True`, the tool automatically updates SWOT data from `DataWebsite` before processing. If `False`, uses local data.                          | -           | ❌ No
+ | **`Interpolateur`** | String                | Interpolation method for DEM generation. Options: `IDW`, `Moyenne`.                                                                                   | `Moyenne`             | ❌ No         |
+ | **`MAJ_data`**      | Boolean (`True`/`False`) | If `True`, the tool automatically updates SWOT data from `DataWebsite` before processing. If `False`, uses local data.                          | `True`           | ❌ No
 
 ### Launching the script
 To run the **IntertidalSWOTKMeans Tool**, follow these steps:

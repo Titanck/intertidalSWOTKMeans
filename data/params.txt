@@ -1,2 +1,2 @@
 FileAOI FileTypeAOI BeginDate EndDate Method Reso WaterThreshold DistMaxInterpo DataWebsite Interpolateur MAJ_data
-bassin_arcachon geojson 2023-03-30 2023-09-30
+bassin_arcachon geojson 2023-03-30 2023-09-30 Earthaccess
