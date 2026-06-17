@@ -1,5 +1,5 @@
 # IntertidalSWOTKMeans
-IntertidalSWOTKMeans is a tool for generating Digital Elevation Models (DEM) of Intertidal Zones from SWOT Altimetry Data PIXC using K-means Clustering
+IntertidalSWOTKMeans is a tool for generating Digital Elevation Models (DEM) of Intertidal Zones from SWOT Altimetry Data PIXC using K-means Clustering. This tool is based on the method described in the article “Evaluating SWOT’s Interferometric Capabilities for Mapping Intertidal Topography”[¹]
 
 ---
 
@@ -60,32 +60,32 @@ If the .env file has not been created, the script will prompt you for your login
 ## Project Structure
 Put your AOI file in AOI folder. The results will be saved to the output folder. The SWOT images will be written in input folder<br>
 ``` bash
-├── AOI<br>
-│   └── YourAOI.csv/.kml/.shp/.geojson/.gpkg<br>
+├── AOI
+│   └── FileAOI.csv/.kml/.shp/.geojson/.gpkg
 │<br>
-├── output<br>
-│   └── YourAOI_BeginDate_EndDate_Method<br>
-│       └── Parquet<br>
-│	└── results<br>
-│	    └── figRecap.png<br>
-│	    └── MethodYourAOIBeginDate_EndDate.tif<br>
-│	└── SWOTFiles<br>
-│	    └── list_granules_YourAOI.txt<br>
-│<br>
-├── code<br>
-│   └── src<br>
-│       └── intertidal_topo.py<br>
-│	└── swot_images_interface.py<br>
-│   └──IntertidalKMeans.py<br>
-│   └──run_intertidalKMeans.sh<br>
-│<br>
-├── IntertiKmeans.yml<br>
-├── .gitignorev
-└── README.md<br>
+├── output
+│   └── FileAOI_BeginDate_EndDate_Method
+│       └── Parquet
+│	└── results
+│	    └── figRecap.png
+│	    └── MethodYourAOIBeginDate_EndDate.tif
+│	└── SWOTFiles
+│	    └── list_granules_FileAOI.txt
+│
+├── code
+│   └── src
+│       └── intertidal_topo.py
+│	└── swot_images_interface.py
+│   └──IntertidalKMeans.py
+│   └──run_intertidalKMeans.sh
+│
+├── IntertiKmeans.yml
+└── README.md
 ```
 ---
 
 ## Data Source
-
 SWOT data is accessed from [https://search.earthdata.nasa.gov](https://search.earthdata.nasa.gov) or [https://hydroweb.next.theia-land.fr/api](https://hydroweb.next.theia-land.fr/api).<br>
 You must have a NASA EarthData or a Hydroweb account to download data.
+
+[¹]: https://doi.org/10.1016/j.rse.2024.114401 
