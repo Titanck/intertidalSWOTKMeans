@@ -2,20 +2,32 @@
 
 IntertidalSWOTKMeans is a tool for generating Digital Elevation Models (DEM) of Intertidal Zones from SWOT Altimetry Data PIXC using K-means Clustering
 ---
-## Installation
 
+## Installation Guide
 To install the dependencies required by the script, please run the following command:
 
 ```bash
 conda env create -f IntertiKmeans.yaml
 ```
 ---
-## User Parameters
+
+## User Guide
+To authenticate with your Earthdata account at https://search.earthdata.nasa.gov/, you can create a .env file at the root of the project with your credentials, then run this command.
+```bash
+echo "EARTHDATA_USERNAME=your_username" >> .env
+echo "EARTHDATA_PASSWORD=your_password" >> .env
+```
+Otherwise, to authenticate with your Hydroweb account at "https://hydroweb.next.theia-land.fr/api", you can create a .env file at the root of the project with your credentials, then run this command.<br>
+
+```bash
+echo "APIKEY_HYDROWEB=your_APIkey" >> .env
+```
+### User Parameters
 
 The tool's input parameters must be specified in the params.txt file located in the “data” folder. Parameters should be added as individual lines. The user can add as many lines as desired. The parameters to be specified are detailed in the following section: 
-
 ---
-## Input Parameters
+
+### Input Parameters
    **Parameter**       | **Type**               | **Description**                                                                                                                                                     | **Default**       | **Required** |
  |---------------------|------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|--------------|
  | **`FileAOI`**       | File (Shapefile, GeoJSON, KML, GPKG) | Path to the **Area of Interest (AOI)** file. Defines the geographic zone for DEM generation.                                                                     | -                 | ✅ Yes        |
@@ -29,8 +41,8 @@ The tool's input parameters must be specified in the params.txt file located in 
  | **`DataWebsite`**   | String           | Name of the website where to search for data. Supported websites: `Earthaccess` and `Hydroweb`                     | -                 | ✅ Yes        |
  | **`Interpolateur`** | String                | Interpolation method for DEM generation. Options: `idw`, `moyenne`, `linear`.                                                                                   | `idw`             | ❌ No         |
  | **`MAJ_data`**      | Boolean (`True`/`False`) | If `True`, the tool automatically updates SWOT data from `DataWebsite` before processing. If `False`, uses local data.                          | `False`           | ❌ No
----
-## User Guide
+
+### Launching the script
 To run the **IntertidalSWOTKMeans Tool**, follow these steps:
 
 1. **Open a terminal** in the `code` folder of the project.
@@ -41,14 +53,8 @@ To run the tool for the **first time**, execute the following command to make th
 chmod +x run_intertidal_swot.sh  # Only needed once to make the script executable
 ./run_intertidal_swot.sh         # Run the script
 ```
-To authenticate with your Earthdata account at https://search.earthdata.nasa.gov/, you can create a .env file at the root of the project with your credentials, then run this command.<br>
-echo "EARTHDATA_USERNAME=your_username" >> .env<br>
-echo "EARTHDATA_PASSWORD=your_password" >> .env<br>
-
-Otherwise, to authenticate with your Hydroweb account at "https://hydroweb.next.theia-land.fr/api", you can create a .env file at the root of the project with your credentials, then run this command.<br>
-
-echo "APIKEY_HYDROWEB=your_APIkey" >> .env<br>
 ---
+
 ## Project Structure
 Put your AOI file in AOI folder. The results will be saved to the output folder. The SWOT images will be written in input folder<br>
 
