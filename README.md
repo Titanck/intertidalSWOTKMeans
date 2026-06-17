@@ -1,5 +1,4 @@
 # IntertidalSWOTKMeans
-
 IntertidalSWOTKMeans is a tool for generating Digital Elevation Models (DEM) of Intertidal Zones from SWOT Altimetry Data PIXC using K-means Clustering
 ---
 
@@ -23,7 +22,6 @@ Otherwise, to authenticate with your Hydroweb account at "https://hydroweb.next.
 echo "APIKEY_HYDROWEB=your_APIkey" >> .env
 ```
 ### User Parameters
-
 The tool's input parameters must be specified in the params.txt file located in the “data” folder. Parameters should be added as individual lines. The user can add as many lines as desired. The parameters to be specified are detailed in the following section: 
 ---
 
@@ -53,6 +51,7 @@ To run the tool for the **first time**, execute the following command to make th
 chmod +x run_intertidal_swot.sh  # Only needed once to make the script executable
 ./run_intertidal_swot.sh         # Run the script
 ```
+If the .env file has not been created, the script will prompt you for your login credentials. 
 ---
 
 ## Project Structure
