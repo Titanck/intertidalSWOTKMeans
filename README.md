@@ -59,7 +59,7 @@ If the .env file has not been created, the script will prompt you for your login
 
 ## Project Structure
 Put your AOI file in AOI folder. The results will be saved to the output folder. The SWOT images will be written in input folder<br>
-
+``` bash
 ├── AOI<br>
 │   └── YourAOI.csv/.kml/.shp/.geojson/.gpkg<br>
 │<br>
@@ -82,7 +82,7 @@ Put your AOI file in AOI folder. The results will be saved to the output folder.
 ├── IntertiKmeans.yml<br>
 ├── .gitignorev
 └── README.md<br>
-
+```
 ---
 
 ## Data Source
