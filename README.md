@@ -35,9 +35,11 @@ To run the **IntertidalSWOTKMeans Tool**, follow these steps:
 
 1. **Open a terminal** in the `code` folder of the project.
 2. **Run the script** using the following command:
+To run the tool for the **first time**, execute the following command to make the script executable and then run it:
 
 ```bash
-bash ./run_intertidalKMeans.sh
+chmod +x run_intertidal_swot.sh  # Only needed once to make the script executable
+./run_intertidal_swot.sh         # Run the script
 ```
 To authenticate with your Earthdata account at https://search.earthdata.nasa.gov/, you can create a .env file at the root of the project with your credentials, then run this command.<br>
 echo "EARTHDATA_USERNAME=your_username" >> .env<br>
