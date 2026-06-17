@@ -7,7 +7,7 @@ IntertidalSWOTKMeans is a tool for generating Digital Elevation Models (DEM) of 
 To install the dependencies required by the script, please run the following command:
 
 ```bash
-conda env create -f IntertiKmeans.yaml<br>
+conda env create -f IntertiKmeans.yaml
 ```
 
 ## User Parameters
@@ -26,7 +26,7 @@ The tool's input parameters must be specified in the params.txt file in the data
  | **`Reso`**          | Integer (meters)      | Spatial resolution of the output DEM (in meters). Lower values = higher precision but longer processing time.                                               | `10`              | ❌ No         |
  | **`WaterThreshold`** | Float (meters)       | Elevation threshold to classify water areas. Values below this threshold are considered water.                                                               | `0.0`             | ❌ No         |
  | **`DistMaxInterpo`** | Integer (meters)      | Maximum distance for interpolation of missing data. Values beyond this distance will not be interpolated.                                                     | `100`             | ❌ No
- | **`DataWebsite`**   | URL or Path           | URL or local path to the **SWOT data source** (e.g., [NASA PO.DAAC](https://podaac.jpl.nasa.gov/swot)).                     | -                 | ✅ Yes        |
+ | **`DataWebsite`**   | String           | Name of the website where to search for data. Supported websites: `Earthaccess` and `Hydroweb`                     | -                 | ✅ Yes        |
  | **`Interpolateur`** | String                | Interpolation method for DEM generation. Options: `idw`, `kriging`, `linear`.                                                                                   | `idw`             | ❌ No         |
  | **`MAJ_data`**      | Boolean (`True`/`False`) | If `True`, the tool automatically updates SWOT data from `DataWebsite` before processing. If `False`, uses local data.                          | `False`           | ❌ No
 
