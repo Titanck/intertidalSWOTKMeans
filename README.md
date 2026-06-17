@@ -1,5 +1,5 @@
 # IntertidalSWOTKMeans
-IntertidalSWOTKMeans is a tool for generating Digital Elevation Models (DEM) of Intertidal Zones from SWOT Altimetry Data PIXC using K-means Clustering. This tool is based on the method described in the article “Evaluating SWOT’s Interferometric Capabilities for Mapping Intertidal Topography”[¹]
+IntertidalSWOTKMeans is a tool for generating Digital Elevation Models (DEM) of Intertidal Zones from SWOT Altimetry Data PIXC using K-means Clustering. This tool is based on the method described in the article <ins>Evaluating SWOT’s Interferometric Capabilities for Mapping Intertidal Topography<\ins>[¹]
 
 ---
 
@@ -62,7 +62,7 @@ Put your AOI file in AOI folder. The results will be saved to the output folder.
 ``` bash
 ├── AOI
 │   └── FileAOI.csv/.kml/.shp/.geojson/.gpkg
-│<br>
+│
 ├── output
 │   └── FileAOI_BeginDate_EndDate_Method
 │       └── Parquet
