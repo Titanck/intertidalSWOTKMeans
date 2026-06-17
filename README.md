@@ -91,5 +91,5 @@ You must have a NASA EarthData or a Hydroweb account to download data.
 
 ## Contributors
 Tancrède MAYTIE
-Edward SALAMEH
+Edward SALAMEH <br>
 [¹]: https://doi.org/10.1016/j.rse.2024.114401 
