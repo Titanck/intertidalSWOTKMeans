@@ -1,16 +1,18 @@
-# 🔍 IntertidalSWOT Tool
+# IntertidalSWOTKMeans
 
-Generate Digital Elevation Models (DEM) of Intertidal Zones from SWOT Altimetry Data PIXC using K-means Clustering
+IntertidalSWOTKMeans is a tool for generating Digital Elevation Models (DEM) of Intertidal Zones from SWOT Altimetry Data PIXC using K-means Clustering
 
-## 🚀 Installation
+## Installation
 
 To install the dependencies required by the script, please run the following command:
 
+```bash
 conda env create -f IntertiKmeans.yaml<br>
+```
 
-## 🔧 User Parameters
+## User Parameters
 
-Edit the params.txt file in data folder 
+The tool's input parameters must be specified in the params.txt file in the data folder and are detailed in the following section : 
 
 
 ### Input Parameters
@@ -38,7 +40,7 @@ Otherwise, to authenticate with your Hydroweb account at "https://hydroweb.next.
 echo "APIKEY_HYDROWEB=your_APIkey" >> .env<br>
 ---
 
-## 📂 Project Structure
+## Project Structure
 Put your AOI file in AOI folder. The results will be saved to the output folder. The SWOT images will be written in input folder<br>
 
 ├── AOI<br>
@@ -66,7 +68,7 @@ Put your AOI file in AOI folder. The results will be saved to the output folder.
 
 ---
 
-## 🌍 Data Source
+## Data Source
 
 SWOT data is accessed from [https://search.earthdata.nasa.gov](https://search.earthdata.nasa.gov) or [https://hydroweb.next.theia-land.fr/api](https://hydroweb.next.theia-land.fr/api).<br>
 You must have a NASA EarthData or a Hydroweb account to download data.
