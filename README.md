@@ -86,8 +86,8 @@ Put your AOI file in AOI folder. The results will be saved to the output folder.
 
 ## Data Source
 SWOT data is accessed from [https://search.earthdata.nasa.gov](https://search.earthdata.nasa.gov) or [https://hydroweb.next.theia-land.fr/api](https://hydroweb.next.theia-land.fr/api).<br>
-You must have a NASA EarthData or a Hydroweb account to download data.
 
+---
 
 ## Contributors
 Tancrède MAYTIE <br>
